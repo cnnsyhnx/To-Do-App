@@ -18,12 +18,16 @@ import SwiftUI
  */
 
 @main
-struct Do_ItApp: App {
+struct Remind_it: App {
+    
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 ListView()
             }
+            .environmentObject(listViewModel)
         }
     }
 }
